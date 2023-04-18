@@ -3,10 +3,14 @@ require_once __DIR__."/models/Prodotto.php";
 require_once __DIR__."/models/Cibo.php";
 require_once __DIR__."/models/Altro.php";
 
-$prova=new Cibo(19.99,"cane","scatola",400,['pane','acqua']);
-//var_dump($prova);
-$prova2=new Altro(19.99,"cane","scatola","legno","500 x 400");
-//var_dump($prova2);
+
+try{
+    $prova=new Cibo(5.99,"cane","scatola",400,['pane','acqua']);
+    $prova2=new Altro(19.99,"cane","scatola","legno","500 x 400");
+}catch(Exception $e){
+    echo $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
